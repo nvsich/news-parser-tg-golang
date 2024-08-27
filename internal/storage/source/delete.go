@@ -4,8 +4,8 @@ import "context"
 
 var (
 	deleteSourceByIdQuery = `
-delete from sources 
-      where source_id = $1
+delete from sources s
+      where s.source_id = $1
 `
 )
 

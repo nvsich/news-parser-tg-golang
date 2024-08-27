@@ -8,8 +8,8 @@ import (
 var (
 	getSourceByIdQuery = `
 select *
-  from sources 
- where id = $1
+  from sources s
+ where s.id = $1
 `
 )
 
