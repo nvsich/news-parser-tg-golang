@@ -6,8 +6,11 @@ import (
 )
 
 var (
-	getSourceByIdQuery = `select * from sources 
-                                  where source_id = $1`
+	getSourceByIdQuery = `
+select *
+  from sources 
+ where id = $1
+`
 )
 
 func (s *SourcePostgresStorage) SourceByID(ctx context.Context, id int64) (*model.Source, error) {

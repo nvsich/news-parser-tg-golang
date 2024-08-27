@@ -3,8 +3,10 @@ package source
 import "context"
 
 var (
-	deleteSourceByIdQuery = `delete from sources 
-                                  where source_id = $1`
+	deleteSourceByIdQuery = `
+delete from sources 
+      where source_id = $1
+`
 )
 
 func (s *SourcePostgresStorage) Delete(ctx context.Context, id int64) error {

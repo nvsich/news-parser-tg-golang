@@ -7,7 +7,10 @@ import (
 )
 
 var (
-	getAllSourcesQuery = `select * from sources`
+	getAllSourcesQuery = `
+select * 
+  from sources
+`
 )
 
 func (s *SourcePostgresStorage) Sources(ctx context.Context) ([]model.Source, error) {

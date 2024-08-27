@@ -6,9 +6,11 @@ import (
 )
 
 var (
-	addSourceQuery = `insert into sources (source_name, feed_url, created_at) 
-						   values ($1, $2, $3) 
-					    returning source_id`
+	addSourceQuery = `
+insert into sources (source_name, feed_url, created_at) 
+	 values ($1, $2, $3) 
+  returning id
+`
 )
 
 func (s *SourcePostgresStorage) Add(ctx context.Context, source *model.Source) (int64, error) {
