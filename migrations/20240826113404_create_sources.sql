@@ -2,11 +2,11 @@
 -- +goose StatementBegin
 create table sources
 (
-    source_id   serial primary key,
-    source_name text      not null,
-    feed_url    text      not null,
-    created_at  timestamp not null,
-    updated_at  timestamp not null
+    id         serial primary key,
+    name       varchar(255) not null,
+    feed_url   varchar(255) not null,
+    priority   int          not null,
+    created_at timestamp    not null default now()
 );
 -- +goose StatementEnd
 
